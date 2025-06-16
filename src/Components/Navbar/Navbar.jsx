@@ -10,7 +10,7 @@ function Navbar() {
   };
   return (
     <>
-      <div className="w-screen h-18 shadow-[0px_1px_10px_rgba(0,0,0,0.2)] fixed top-0 z-10 p-2 flex bg-white ">
+      <div className="w-screen h-15 shadow-[0px_1px_10px_rgba(0,0,0,0.2)] fixed top-0 z-10 p-2 flex bg-white ">
         <div className=" h-full flex-2 text-3xl flex items-center justify-center text-black font-bold">
           E A S Y
         </div>
@@ -23,9 +23,9 @@ function Navbar() {
           {/* when active is true ,show chaticon2 else show chaticon */}
         </div>
         <div className=" h-full flex  flex-1 items-center justify-center ">
-          <div className=" h-[70%] w-[70%] rounded-md bg-[#537D5D] flex items-center justify-center transition-all active:scale-90 cursor-pointer">
+          <div className=" h-[75%] w-[60%] rounded-md bg-[#537D5D] flex items-center justify-center transition-all active:scale-90 cursor-pointer">
             <img
-              src="https://img.icons8.com/ios-filled/30/FFFFFF/menu--v6.png"
+              src="https://img.icons8.com/ios-filled/25/FFFFFF/menu--v6.png"
               alt="Hamburger Menu"
             />
           </div>
