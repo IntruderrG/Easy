@@ -86,15 +86,8 @@ const LiveLocationMap = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 max-w-6xl">
+    <div className="container mx-auto p-4 max-w-6xl mt-10">
       <div className="bg-white rounded-lg shadow-md p-6">
-        <div className="flex items-center mb-6">
-          <FaMapMarkerAlt className="text-blue-500 text-3xl mr-3" />
-          <h2 className="text-2xl font-bold text-gray-800">
-            Live Location Tracker
-          </h2>
-        </div>
-
         <div className="flex flex-wrap gap-4 mb-6">
           <button
             onClick={handleGetLocation}

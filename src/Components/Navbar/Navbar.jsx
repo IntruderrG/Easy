@@ -1,6 +1,7 @@
 import React from "react";
+import { use } from "react";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 function Navbar() {
   let [active, setActive] = useState(false);
   let chaticon = "https://img.icons8.com/forma-light/30/chat.png";
@@ -8,10 +9,14 @@ function Navbar() {
   const handleClick = () => {
     setActive((prev) => !prev);
   };
+  const navigate = useNavigate();
   return (
     <>
       <div className="w-screen h-15 shadow-[0px_1px_10px_rgba(0,0,0,0.2)] fixed top-0 z-10 p-2 flex bg-white ">
-        <div className=" h-full flex-2 text-3xl flex items-center justify-center text-black font-bold">
+        <div
+          className=" h-full flex-2 text-3xl flex items-center justify-center text-black font-bold"
+          onClick={() => navigate("/")}
+        >
           E A S Y
         </div>
         <div className="h-full flex-3"></div>

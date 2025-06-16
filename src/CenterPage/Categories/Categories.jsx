@@ -7,7 +7,7 @@ import fallDataIcon from "./Images/fall.png";
 import connectIcon from "./Images/link.png";
 import medicinesIcon from "./Images/pill.png";
 import hospitalsIcon from "./Images/hospital.png";
-import helpIcon from "./Images/customer-service.png";
+import locateIcon from "./Images/pointer.png";
 import { useNavigate } from "react-router-dom";
 function Categories() {
   const navigate = useNavigate();
@@ -74,10 +74,10 @@ function Categories() {
           className="h-[80%] w-[80%]  bg-[#D9D7A9] rounded-md transition-all active:scale-90 flex items-center justify-center "
           onClick={() => navigate("/location")}
         >
-          <img src={helpIcon} alt="" className="h-[80%] w-[80%]" />
+          <img src={locateIcon} alt="" className="h-[80%] w-[80%]" />
         </div>
         <div className="h-[10%] w-[90%]  rounded-md  flex items-center justify-center text-[#7E7D7D] ">
-          Help
+          Track Me
         </div>
       </div>
     </div>
