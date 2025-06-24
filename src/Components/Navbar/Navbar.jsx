@@ -12,30 +12,15 @@ function Navbar() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="w-screen h-15 shadow-[0px_1px_10px_rgba(0,0,0,0.2)] fixed top-0 z-10 p-2 flex bg-white ">
-        <div
-          className=" h-full flex-2 text-3xl flex items-center justify-center text-black font-bold"
-          onClick={() => navigate("/")}
-        >
-          E A S Y
-        </div>
-        <div className="h-full flex-3"></div>
-        <div
-          className="h-full flex flex-1 items-center justify-end transition-all active:scale-95 cursor-pointer"
-          onClick={handleClick}
-        >
-          <img src={active ? chaticon2 : chaticon} alt="Chat" />
-          {/* when active is true ,show chaticon2 else show chaticon */}
-        </div>
-        <div className=" h-full flex  flex-1 items-center justify-center ">
-          <div className=" h-[75%] w-[60%] rounded-md bg-[#537D5D] flex items-center justify-center transition-all active:scale-90 cursor-pointer">
-            <img
-              src="https://img.icons8.com/ios-filled/25/FFFFFF/menu--v6.png"
-              alt="Hamburger Menu"
-            />
-          </div>
+      <div className="fixed top-0 h-15 w-screen bg-white opacity-80 flex items-center pl-4 z-10">
+        <div onClick={() => navigate("/")}>
+          <span className="text-green-800 text-4xl font-bold inline-block -rotate-12 hover:rotate-0 transition-all duration-300">
+            E{" "}
+          </span>
+          <span className="text-2xl font-bold ">&nbsp; A S Y</span>
         </div>
       </div>
+      <div className="fixed bottom-0 h-15 w-screen "></div>
     </>
   );
 }

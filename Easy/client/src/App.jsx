@@ -5,6 +5,8 @@ import TopSection from "./CenterPage/TopSection/TopSection";
 function App() {
   return (
     <>
+      {/* <TopSection />
+      <Categories /> */}
       <Home />
     </>
   );
