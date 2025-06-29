@@ -244,7 +244,7 @@ function Categories() {
         <CategoryItem
           icon={medicinesIcon}
           label="Medicines"
-          onClick={() => navigate("/medicines")}
+          onClick={() => window.open("https://www.1mg.com/", "_blank")}
         />
         <CategoryItem
           icon={hospitalsIcon}
