@@ -8,6 +8,6 @@ export default defineConfig({
   server: {
     host: true, // This makes Vite listen on all network interfaces (important for tunnel)
     port: 5173,
-    allowedHosts: ["rice-thereof-filled-architects.trycloudflare.com"],
+    allowedHosts: ["joel-museums-paint-forum.trycloudflare.com"],
   },
 });

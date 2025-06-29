@@ -3,9 +3,10 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
-import Navbar from "./Components/Navbar/Navbar.jsx";
-import Footer from "./Components/Navbar/Footer/Footer.jsx";
+
 import LiveLocationMap from "./WorkingComponents/LiveLocationMap.jsx";
+import Navbar from "./Components/ControlUtilities/Navbar/Navbar.jsx";
+import Footer from "./Components/ControlUtilities/Footer/Footer.jsx";
 console.warn(
   "The site is still Under Development, some features may not work as expected."
 );
