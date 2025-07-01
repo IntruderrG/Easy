@@ -1,6 +1,11 @@
 import React from "react";
-
+import { useNavigate, useLocation } from "react-router-dom";
 const Footer = () => {
+  const location = useLocation();
+  const hidePath = ["/login", "/signup"];
+  if (hidePath.includes(location.pathname)) {
+    return null; // Don't render Navbar on these paths
+  }
   return (
     <footer
       className="pt-8 pb-6 border-t "

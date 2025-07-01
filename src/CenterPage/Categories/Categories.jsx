@@ -224,7 +224,7 @@ function Categories() {
         <CategoryItem
           icon={consultIcon}
           label="Consult"
-          onClick={() => navigate("/consult")}
+          onClick={() => navigate("/auth")}
         />
         <CategoryItem
           icon={bpIcon}

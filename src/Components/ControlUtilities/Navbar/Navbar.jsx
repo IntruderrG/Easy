@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import emerimg from "../Images/call.png";
 import home from "../Images/home.png";
+import { use } from "react";
 
 function Navbar() {
+  const location = useLocation();
+  const hidePath = ["/login", "/signup"];
+  if (hidePath.includes(location.pathname)) {
+    return null; // Don't render Navbar on these paths
+  }
   const [profilePopup, setProfilePopup] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeTab, setActiveTab] = useState("home");
@@ -253,7 +259,7 @@ function Navbar() {
                 }}
               />
               {activeTab === "emergency" && (
-                <div className="absolute -top-1 -right-1 h-1 w-2 bg-red-600 rounded-full"></div>
+                <div className="absolute -top-1 -right-1 h-1 w-1 bg-red-600 rounded-full"></div>
               )}
             </div>
           </button>
@@ -297,7 +303,7 @@ function Navbar() {
                   </p>
                 </div>
                 <a
-                  href="#"
+                  href="/login"
                   className="block px-4 py-3 text-sm text-gray-700 hover:bg-[#6a8e23b5] hover:bg-opacity-10 transition flex items-center"
                 >
                   <img

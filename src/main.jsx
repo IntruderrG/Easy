@@ -7,9 +7,10 @@ import App from "./App.jsx";
 import LiveLocationMap from "./WorkingComponents/LiveLocationMap.jsx";
 import Navbar from "./Components/ControlUtilities/Navbar/Navbar.jsx";
 import Footer from "./Components/ControlUtilities/Footer/Footer.jsx";
-console.warn(
-  "The site is still Under Development, some features may not work as expected."
-);
+import SignupPage from "./Authentication/SignupPage.jsx";
+import LoginPage from "./Authentication/LoginPage.jsx";
+import Auth from "./Authentication/Auth.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
@@ -17,6 +18,11 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/location" element={<LiveLocationMap />}></Route>
+        <Route path="/signup" element={<SignupPage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/auth" element={<Auth />}></Route>
+        {/* <Route path="/signup" element={<SignupPage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route> */}
       </Routes>
       <Footer />
     </BrowserRouter>
