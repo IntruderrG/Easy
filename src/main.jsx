@@ -9,7 +9,6 @@ import Navbar from "./Components/ControlUtilities/Navbar/Navbar.jsx";
 import Footer from "./Components/ControlUtilities/Footer/Footer.jsx";
 import SignupPage from "./Authentication/SignupPage.jsx";
 import LoginPage from "./Authentication/LoginPage.jsx";
-import Auth from "./Authentication/Auth.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -20,9 +19,6 @@ createRoot(document.getElementById("root")).render(
         <Route path="/location" element={<LiveLocationMap />}></Route>
         <Route path="/signup" element={<SignupPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/auth" element={<Auth />}></Route>
-        {/* <Route path="/signup" element={<SignupPage />}></Route>
-        <Route path="/login" element={<LoginPage />}></Route> */}
       </Routes>
       <Footer />
     </BrowserRouter>
