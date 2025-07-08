@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import emerimg from "../Images/call.png";
 import home from "../Images/home.png";
-import { use } from "react";
+// import { use } from "react";
 
 function Navbar() {
   const location = useLocation();

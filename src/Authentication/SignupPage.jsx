@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple, FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import authService from "../api/auth";
 
 const SignupPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,6 +22,8 @@ const SignupPage = () => {
     number: false,
     specialChar: false,
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const validatePassword = (password) => {
     const validations = {
@@ -80,11 +83,33 @@ const SignupPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      console.log("Signup submitted:", formData);
-      alert("Account created successfully!");
+
+    console.log(e);
+    if (!validateForm()) return;
+
+    setIsLoading(true);
+
+    try {
+      const { confirmPassword, ...userData } = formData;
+      await authService.signup({
+        ...userData,
+        dob: new Date(userData.dob).toISOString(), // FIXED: added ()
+      });
+      navigate("/");
+    } catch (error) {
+      if (error.response?.data?.errors) {
+        const apiErrors = {};
+        error.response.data.errors.forEach((err) => {
+          apiErrors[err.param] = err.msg;
+        });
+        setErrors(apiErrors);
+      } else {
+        alert(error.response?.data?.msg || "Signup failed");
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -303,9 +328,12 @@ const SignupPage = () => {
 
           <button
             type="submit"
-            className="w-full py-3 bg-olive-400 hover:bg-olive-500 text-white font-semibold rounded-lg transition duration-300"
+            disabled={isLoading}
+            className={`w-full py-3 bg-olive-400 hover:bg-olive-500 text-white font-semibold rounded-lg transition duration-300 ${
+              isLoading ? "opacity-70 cursor-not-allowed" : ""
+            }`}
           >
-            Create Account
+            {isLoading ? "Creating Account..." : "Create Account"}
           </button>
         </form>
         <div className="mt-6 text-center text-sm text-gray-500">
